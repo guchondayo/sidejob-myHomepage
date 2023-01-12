@@ -1,6 +1,21 @@
 <template>
     <header>
-     <p>株式会社谷口祐人</p>
+        <p>{{ name.contact }}</p>
     </header>
 </template>
+<script>
+    export default{
+        data:function(){
+            return {
+                a:"aaaa"
+            }
+        },
+        props:{
+            name: {
+                type: Object, // String型に限定
+            }
+        }
+    }
+</script>
+
 
