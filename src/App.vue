@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <Header :name=headerTopic></Header>
+    <Header :name=headerTopic :corporation=corporation></Header>
     <Footer></Footer>
   </div>
 </template>
@@ -9,6 +9,7 @@
 // import HelloWorld from './components/HelloWorld.vue'
 import Header from './components/HeaderComponent.vue'
 import Footer from './components/FooterComponent.vue'
+import 'normalize.css'
 
 export default {
   name: 'App',
@@ -16,7 +17,7 @@ export default {
     return {
       corporation:"株式会社　谷口",
       // headerTopic:"お問い合わせ"
-      headerTopic:{contact:"お問い合わせ",aboutUs:"私たちの活動",diary:"プログラミング日記",result:"開発実績"},
+      headerTopic:["株式会社谷口とは","お問い合わせ","私たちの活動","プログラミング日記","開発実績"],
       // footerTopic:{contact:"お問い合わせ",aboutUs:"私たちの活動",diary:"プログラミング日記",result:"開発実績"}
     }
   },
@@ -27,5 +28,6 @@ export default {
 </script>
 
 <style>
+  
 
 </style>
