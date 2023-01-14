@@ -5,16 +5,10 @@
             <nav class="top-menu">
                 <ul class="top-right-nav">
                     <li v-for="(value, key) in name" :key="key">{{ value }}</li>
-                    <router-link to="/contact">Go to home</router-link>
+                    <router-link to="/about">Go to home</router-link>
                 </ul>
             </nav>
         </div>
-        <div class="bottom-header">
-            <h1>{{ name.contact }}</h1>
-        </div>
-         <!-- ↓こいつが必要 -->
-         <router-view />
-        
     </header>
 </template>
 <script>
@@ -36,11 +30,10 @@
 
 <style scoped>
     header{
-        height: 300px;
+        height: 100px;
     }
 
     .top-header{
-        height:20%;
         background-color: aqua;
         padding: 0.5%;
         display: flex;

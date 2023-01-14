@@ -1,6 +1,8 @@
 <template>
   <div id="app">
     <Header :name=headerTopic :corporation=corporation></Header>
+    <!-- ↓こいつが必要 -->
+    <router-view />        
     <Footer :name=headerTopic :corporation=corporation></Footer>
   </div>
 </template>

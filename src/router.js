@@ -3,6 +3,7 @@ import Vue from "vue"
 import Router from "vue-router"
 // import App from './App.vue'
 import Contact from "./components/view/ContactForm"
+import About from "./components/view/AboutComponent"
 
 Vue.use(Router)
 
@@ -10,6 +11,7 @@ let router = new Router({
     routes: [
       // { path: '/', component: App },
       { path: '/contact', component: Contact },
+      { path: '/about', component: About },
     ]
 })
 
