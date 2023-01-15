@@ -31,6 +31,7 @@
 <style scoped>
     header{
         height: 100px;
+        margin: 0;
     }
 
     .top-header{

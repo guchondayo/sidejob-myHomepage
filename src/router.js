@@ -4,12 +4,12 @@ import Router from "vue-router"
 // import App from './App.vue'
 import Contact from "./components/view/ContactForm"
 import About from "./components/view/AboutComponent"
-
+import Top from "./components/TopPage"
 Vue.use(Router)
 
 let router = new Router({
     routes: [
-      // { path: '/', component: App },
+      { path: '/', component: Top },
       { path: '/contact', component: Contact },
       { path: '/about', component: About },
     ]
