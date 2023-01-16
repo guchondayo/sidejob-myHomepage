@@ -7,15 +7,19 @@
     export default{
         data:function(){
             return{
-                // ②クラスの入れ替え
-                isTest:{firstImg:true,secondImg:false,thirdImg:false}
+                isTest:{firstImg:false,secondImg:true,thirdImg:false}
             }
         },
         mounted:function(){
             let count = 0
             let myImage = ["pic1.jpg", "pic2.jpg", "pic3.jpg"]
+            //あらかじめ別の変数に代入しておく
+            let me = this
+            console.log(me)
+            let objNum = Object.keys(me.isTest).length
+            console.log(objNum)
             setInterval(function(){
-                if(count >= myImage.length){
+                if(count >= objNum){
                     count = 0;
                 }
                 count++;
@@ -26,18 +30,29 @@
                 // https://ikatakos.com/pot/programming/web_development/javascript/vuejs/tips/img
 
                 // https://xminatolog.com/post/773
+
+                // コールバック関数でthisを使って、Vueインスタンスに参照することができなかった
+                // https://tadaken3.hatenablog.jp/entry/vue-scope-this
+                // JavaScript オブジェクトの要素数を取得する
+                // https://zukucode.com/2017/04/javascript-object-length.html
         }
     }
 </script>
 <style>
-    .test{
+    .firstImg{
+        background-image: url(../../public/pic1.jpg);
+        background-size:cover;
+        width: 100%;
+        height: 400px;
+    }
+    .secondImg{
         background-image: url(../../public/pic2.jpg);
         background-size:cover;
         width: 100%;
         height: 400px;
     }
-    .oneImage{
-        background-image: url(../../public/pic3.jpg);
+    .thirdImg{
+        background-image: url(../../public/pic2.jpg);
         background-size:cover;
         width: 100%;
         height: 400px;
