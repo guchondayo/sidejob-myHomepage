@@ -1,14 +1,14 @@
 <template>
-    <div :class="{test: isTest}">  
-         
+    <!-- ①バインドをする -->
+    <div :class=isTest>  
     </div>
-
 </template>
 <script>
     export default{
         data:function(){
             return{
-                isTest:true
+                // ②クラスの入れ替え
+                isTest:{firstImg:true,secondImg:false,thirdImg:false}
             }
         },
         mounted:function(){
@@ -36,11 +36,11 @@
         width: 100%;
         height: 400px;
     }
-    .img-container{
-        height:400px;
-        width:100%;
-        background-color: blue;
-        margin: 0;
+    .oneImage{
+        background-image: url(../../public/pic3.jpg);
+        background-size:cover;
+        width: 100%;
+        height: 400px;
     }
     /* https://jajaaan.co.jp/web-production/frontend/css-background/ */
     /* v-bindを紐づける */
