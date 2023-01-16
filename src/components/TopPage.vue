@@ -7,7 +7,7 @@
     export default{
         data:function(){
             return{
-                isTest:{firstImg:false,secondImg:true,thirdImg:false}
+                isTest:{firstImg:true,secondImg:false,thirdImg:false}
             }
         },
         mounted:function(){
@@ -21,7 +21,8 @@
                 if(count >= objNum){
                     count = 0;
                 }
-                switch (count){
+                console.log(count)
+                switch (count){  
                     case 0:
                         me.isTest = {firstImg:true,secondImg:false,thirdImg:false};
                     break
@@ -32,7 +33,7 @@
                         me.isTest = {firstImg:false,secondImg:false,thirdImg:true};
                 }
                 count++;
-            },1000)
+            },5000)
                 // https://mebee.info/2021/04/08/post-32646/
                 // setintervalにthisを入れた時の入れた時のスコープ
                 // img srcを使うと、、
@@ -44,6 +45,7 @@
                 // https://tadaken3.hatenablog.jp/entry/vue-scope-this
                 // JavaScript オブジェクトの要素数を取得する
                 // https://zukucode.com/2017/04/javascript-object-length.html
+                // でもやっぱりダメ
         }
     }
 </script>
@@ -53,23 +55,87 @@
         background-size:cover;
         width: 100%;
         height: 400px;
+        animation: 1s 4s forwards firstFadeout;
     }
+
+    @keyframes firstFadeout {
+        0% {
+        transform: translateX(0px);
+        }
+
+        100% {
+        transform: translateX(1000px);
+        opacity: 0;
+        }
+    }
+
     .secondImg{
         background-image: url(../../public/pic2.jpg);
         background-size:cover;
         width: 100%;
         height: 400px;
+        animation: 1s 4s forwards secondFadeout;
     }
+
+
+    @keyframes secondFadeout {
+        0% {
+        transform: translateX(0px);
+        }
+
+        100% {
+        transform: translateX(1000px);
+        opacity: 0;
+        }
+    }
+
     .thirdImg{
-        background-image: url(../../public/pic2.jpg);
+        background-image: url(../../public/pic3.jpg);
         background-size:cover;
         width: 100%;
         height: 400px;
+        animation: 1s 4s forwards thirdFadeout;
     }
+
+
+    @keyframes thirdFadeout {
+        0% {
+        transform: translateX(0px);
+        }
+
+        100% {
+        transform: translateX(1000px);
+        opacity: 0;
+        }
+    }
+
+    @keyframes Fadeout {
+        0% {
+        transform: translateX(0px);
+        }
+
+        100% {
+        transform: translateX(1000px);
+        opacity: 0;
+        }
+    }
+
+
+
+
+
     /* https://jajaaan.co.jp/web-production/frontend/css-background/ */
     /* v-bindを紐づける */
     /* https://johobase.com/vue-js-v-bind-directive-class/ */
     /* とりあえず */
     /* 1.img srcを使って切り替えることは可能 */
     /* 2.v-bindを使っても複数のclassを導入することは可能 */
+
+    /* アニメーションの終了時の状態が毎回元の形に戻ってしまって嫌だった */
+    /* https://webdesignday.jp/inspiration/technique/css/5167/ */
+
+    /* 同じキーフレームを設定しても、最初のやつしか設定できなかった */
+    /* https://developer.mozilla.org/ja/docs/Web/CSS/animation-fill-mode */
+    /* 一意じゃないとダメかなと思ったんだけど、そうではないみたいなので、後ろにつけた */
+
 </style>
