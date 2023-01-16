@@ -12,7 +12,6 @@
         },
         mounted:function(){
             let count = 0
-            let myImage = ["pic1.jpg", "pic2.jpg", "pic3.jpg"]
             //あらかじめ別の変数に代入しておく
             let me = this
             console.log(me)
@@ -22,8 +21,18 @@
                 if(count >= objNum){
                     count = 0;
                 }
+                switch (count){
+                    case 0:
+                        me.isTest = {firstImg:true,secondImg:false,thirdImg:false};
+                    break
+                    case 1:
+                        me.isTest = {firstImg:false,secondImg:true,thirdImg:false};
+                    break
+                    case 2:
+                        me.isTest = {firstImg:false,secondImg:false,thirdImg:true};
+                }
                 count++;
-            },2000)
+            },1000)
                 // https://mebee.info/2021/04/08/post-32646/
                 // setintervalにthisを入れた時の入れた時のスコープ
                 // img srcを使うと、、
