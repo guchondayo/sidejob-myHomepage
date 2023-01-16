@@ -34,7 +34,7 @@
                 count++;
             },1000)
                 // https://mebee.info/2021/04/08/post-32646/
-                // setintervalにthisを入れた時の入れた時のスコープ
+                // setintervalにthisを入れた時の入れた時のスコープ!
                 // img srcを使うと、、
                 // https://ikatakos.com/pot/programming/web_development/javascript/vuejs/tips/img
 
