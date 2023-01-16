@@ -54,8 +54,21 @@
         background-image: url(../../public/pic1.jpg);
         background-size:cover;
         width: 100%;
-        height: 400px;
-        animation: 1s 4s forwards firstFadeout;
+        height: 500px;
+
+        animation: 1s 0s forwards firstFadein,1s 4s forwards firstFadeout;
+    }
+
+    @keyframes firstFadein {
+        0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+        }
+
+        100% {
+        transform: translateX(0px);
+        opacity: 1;
+        }
     }
 
     @keyframes firstFadeout {
@@ -73,11 +86,21 @@
         background-image: url(../../public/pic2.jpg);
         background-size:cover;
         width: 100%;
-        height: 400px;
-        animation: 1s 4s forwards secondFadeout;
+        height: 500px;
+
+        animation: 1s 0s forwards secondFadein,1s 4s forwards secondFadeout;
     }
 
+    @keyframes secondFadein {
+        0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+        }
 
+        100% {
+        transform: translateX(0px);
+        }
+    }
     @keyframes secondFadeout {
         0% {
         transform: translateX(0px);
@@ -93,25 +116,28 @@
         background-image: url(../../public/pic3.jpg);
         background-size:cover;
         width: 100%;
-        height: 400px;
-        animation: 1s 4s forwards thirdFadeout;
+        height: 500px;
+
+        animation: 1s 0s forwards thirdFadein,1s 4s forwards thirdFadeout;
     }
 
+
+    @keyframes thirdFadein {
+        0% {
+        transform: translateX(-1000px);
+        opacity: 0;
+        }
+
+        100% {
+        transform: translateX(0px);
+        opacity: 1;
+        }
+    }
 
     @keyframes thirdFadeout {
         0% {
         transform: translateX(0px);
-        }
-
-        100% {
-        transform: translateX(1000px);
-        opacity: 0;
-        }
-    }
-
-    @keyframes Fadeout {
-        0% {
-        transform: translateX(0px);
+        opacity: 1;
         }
 
         100% {
@@ -137,5 +163,8 @@
     /* 同じキーフレームを設定しても、最初のやつしか設定できなかった */
     /* https://developer.mozilla.org/ja/docs/Web/CSS/animation-fill-mode */
     /* 一意じゃないとダメかなと思ったんだけど、そうではないみたいなので、後ろにつけた */
+
+    /* 一旦完成をしたけど、悩みとしては、１つ目の画面遷移から時間がかかってしまう */
+    /* コードがじょうちょ */
 
 </style>
