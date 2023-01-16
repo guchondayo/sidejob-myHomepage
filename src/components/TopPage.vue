@@ -1,5 +1,5 @@
 <template>
-    <!-- ①バインドをする -->
+    <!-- ①バインドをする! -->
     <div :class=isTest>  
     </div>
 </template>
