@@ -1,13 +1,27 @@
 <template>
     <!-- ①バインドをする -->
-    <div :class=isTest>  
+    <div>
+        <div :class=isTest>         
+        </div>
+        <div class="news">
+            <h2>NEWS</h2>
+        </div>
+        <div class="news-article">
+            <ul class="news-detail">
+                <li>ブログ始めました</li>
+                <li>ブログ始めました</li>
+                <li>ブログ始めました</li>
+            </ul>
+            
+        </div>
     </div>
 </template>
 <script>
     export default{
         data:function(){
             return{
-                isTest:{firstImg:true,secondImg:false,thirdImg:false}
+                isTest:{firstImg:true,secondImg:false,thirdImg:false},
+                isContainer:{imageContainer:true}
             }
         },
         mounted:function(){
@@ -166,5 +180,36 @@
 
     /* 一旦完成をしたけど、悩みとしては、１つ目の画面遷移から時間がかかってしまう */
     /* コードがじょうちょ */
+
+    /* https://b-risk.jp/blog/2020/06/footer/ */
+    /* https://deshinon.com/2019/03/02/css-button-kurai/ */
+    /* https://pengi-n.co.jp/blog/css-gradient/ */
+
+
+
+    .news{
+        height: 100px;
+        background-image: linear-gradient(to left, black, #86a8e7);
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .news h2{
+        color:aliceblue;
+    }
+    .news-article{
+        min-height: 400px;
+        background-color: gray;
+        
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .news-detail{
+        width: 80%;
+        background-color: white;
+        min-height: 300px;
+    }
 
 </style>
