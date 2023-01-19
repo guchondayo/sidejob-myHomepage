@@ -72,7 +72,7 @@
         margin: 0 0 0 auto;
         width: 50%;
     }
-    /* 右寄せの方法、widthとmarginを指定 */
+    /* 右寄せの方法、widthとmarginを指定! */
     /* https://1-notes.com/css-animation-iteration-count/ */
     /* ヘッダーのマイルール */
     /* ＊同列で左右→flex */
