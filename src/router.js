@@ -4,6 +4,9 @@ import Router from "vue-router"
 // import App from './App.vue'
 import Contact from "./components/view/ContactForm"
 import About from "./components/view/AboutComponent"
+
+import Activity from "./components/view/ActivityComponent"
+import Diary from "./components/view/ProgrammingComponent"
 import Top from "./components/TopPage"
 Vue.use(Router)
 
@@ -12,6 +15,8 @@ let router = new Router({
       { path: '/', component: Top },
       { path: '/contact', component: Contact },
       { path: '/about', component: About },
+      { path: '/Activity', component: Activity },
+      { path: '/diary', component: Diary },
     ]
 })
 
