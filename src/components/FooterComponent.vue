@@ -1,6 +1,7 @@
 <template>
     <footer>
-        <ul>
+        <p>サイトマップ</p>
+        <ul class="site-map">
             <li v-for="(value, key) in name" :key="key">{{ value }}</li>
         </ul>
         <ul>
@@ -21,11 +22,20 @@
 
 <style scoped>
     footer{
-     height: 300px;
-     background-color: black;
+        height: 300px;
+        background-color: black;
 
+    }
+    footer p{
+        padding: 2%;
+        text-align: center;
+        color:white;
     }
     footer ul li{
         color: aliceblue;
+    }
+    .site-map{
+        width:30%;
+        padding-left: 50%;
     }
 </style>
