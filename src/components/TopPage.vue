@@ -6,13 +6,10 @@
         <div class="news">
             <h2>NEWS</h2>
         </div>
-        <div class="news-article">
-            <ul class="news-detail">
-                <li>ブログ始めました</li>
-                <li>ブログ始めました</li>
-                <li>ブログ始めました</li>
-            </ul>          
-        </div>
+        <ul class="news-list">
+            <!-- 親要素にVFORすれば、子要素にも普通に反映される -->
+            <li v-for="(value, key) in newsList" :key="key" class="item"><p class="date">{{ value.date }}</p><p class="category"><span>{{ value.category }}</span></p><p class="title">{{ value.title }}</p></li>
+        </ul>
     </div>
 </template>
 <script>
@@ -59,6 +56,10 @@
                 // JavaScript オブジェクトの要素数を取得する
                 // https://zukucode.com/2017/04/javascript-object-length.html
                 // でもやっぱりダメ
+        },props:{
+            newsList: {
+                type: Array, // String型に限定
+            },
         }
     }
 </script>
@@ -197,18 +198,57 @@
     .news h2{
         color:aliceblue;
     }
-    .news-article{
-        min-height: 400px;
-        background-color: gray;
-        
-        display: flex;
-        justify-content: center;
-        align-items: center;
+
+    /* news実装 */
+    /* https://www.nowte.net/ui/ui-news/ */
+    .news-list{
+    list-style: none outside;
+    margin: 0;
+    padding: 5% 20%;
     }
-    .news-detail{
-        width: 80%;
-        background-color: white;
-        min-height: 300px;
+    .news-list .item{
+    /*コレ*/border-top: 0.5px solid #333;
+    /*コレ*/border-bottom: 0.5px solid #333;
+    margin:5px;
     }
+
+    .news-list .item .date{
+    margin: 0;
+    min-width: 140px;
+    font-size: 16px;
+    color: #999;
+    padding: 0 20px 0 0;
+    }
+    .news-list .item .category{
+    margin: 0;
+    min-width: 140px;
+    padding: 0 20px 0 0;
+    }
+    .news-list .item .category span{
+    background: #999;
+    color: #FFF;
+    text-align: center;
+    display: inline-block;
+    padding: 5px 20px;
+    font-size: 12px;
+    line-height: 1;
+    }
+    .news-list .item .title{
+    margin: 0;
+    width: 100%;
+    }
+
+
+@media screen and (max-width: 767px){
+
+.news-list .item .date{
+  min-width: 100px;
+}
+.news-list .item .title{
+  margin-top: 10px;
+}
+}
+
+
 
 </style>
