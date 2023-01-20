@@ -2,11 +2,7 @@
     <main>
         <div class="container">
             <h1>{{ succeed }}</h1>
-            <div class="picture-article">
-                <img src="../../../public/myPic.jpg" alt="画像">
-                <div class="article">
-                    <p>{{ greed }}</p>
-                </div>
+            <div class="picture-article">   
             </div>
         </div>
     </main>
@@ -17,7 +13,7 @@
   export default{
     data:function(){
         return {
-            succeed:"株式会社谷口とは",
+            succeed:"企業理念",
             greed:greed
         }
     },
@@ -28,13 +24,13 @@
 </script>
 
 <style scoped>
-    main{
-        text-align: center;
+    .picture-article{
+        background-image: url(../../../public/aim.jpg);
+        background-size: cover;
+        width: 100%;
     }
     .container{
-        background-color: burlywood;
         width: 80%;
-        margin:auto;
         padding:1%;
         min-height:1000px;
     }
@@ -42,3 +38,4 @@
         padding: 2% 10%;
     }
 </style>
+<!-- この、backgroundでWIDTHやSIZEを入れないとかアホ、 -->
