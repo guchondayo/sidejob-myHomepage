@@ -37,5 +37,12 @@ export default {
     p{
         margin:0;
     }
+    li{
+      list-style: none;
+      
+    }
+    a{
+      text-decoration:none;
+    }
 
 </style>

@@ -63,7 +63,7 @@
         }
     }
 </script>
-<style>
+<style scoped>
     .firstImg{
         background-image: url(../../public/pic1.jpg);
         background-size:cover;
