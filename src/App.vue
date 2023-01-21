@@ -34,7 +34,7 @@ export default {
 </script>
 
 <style>
-    p{
+    p {
         margin:0;
     }
     li{
