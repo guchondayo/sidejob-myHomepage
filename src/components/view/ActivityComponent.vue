@@ -16,7 +16,7 @@
     </main>
 </template>
 <script>
-    // たくさん練習しましょう
+    // たくさん練習しましょ
     // https://jsfiddle.net/guchon/fns6yq13/31/
 </script>
 <style scoped>
