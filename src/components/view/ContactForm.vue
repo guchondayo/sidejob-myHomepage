@@ -91,18 +91,14 @@ export default {
             }
             return '';
         },
-        checkDescription: function(){
-            if(this.description > 400){
-                return '400文字以内で入力してください';
-            }
-        },
         errors: function() {
             const errors = {
                 'name': this.chackName,
                 'kana': this.chackKana,
                 'tel': this.checkTel,
                 'email': this.chackEmail,
-                'description': this.checkDescription,
+                //もし今後おかしくなったらここを治す
+                'description': '',
             };
             for (var key in errors) {
                 if (errors[key] === '' || errors[key] === null || errors[key] === undefined) {
@@ -113,6 +109,16 @@ export default {
         },
         valid: function() {
             return !Object.keys(this.errors).length;
+        }
+    },
+    //もし今後おかしくなったらここを治す
+    watch:{
+        description:function(){
+            if(this.description.length > 4){
+                this.errors['description'] = '400文字以内で入力してください'
+            }else{
+                this.errors['description'] = ''
+            }
         }
     },
     methods: {
