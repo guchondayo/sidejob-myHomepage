@@ -5,55 +5,32 @@
             <p class="save-btn  side-btn"></p>
         </div>
         <div class="wrapper">
-            <div class="main-container" v-for="(value key) in title">
-                <h2>{{ title[0] }}</h2>
+            <div class="main-container" v-for="(value,key) in diary" :key="key">
+                <h2>{{ value.title }}</h2>
                 <h3>環境</h3>
                 <div class="article-container">
-                </div>
-            </div>
-            <!-- <div class="main-container">
-                <h2>{{ title[0] }}</h2>
-                <h3>環境</h3>
-                <div class="article-container">
-
+                    {{ value.env }}
                 </div>
                 <h3>[概要]</h3>
                 <div class="article-container">
-
+                    {{ value.about }}
                 </div>
                 <h3>ぶつかったエラー</h3>
                 <div class="article-container">
-
+                    {{ value.err }}
                 </div>
                 <h3>やったこと</h3>
                 <div class="article-container">
+                    {{ value.act }}
                 </div>
             </div>
-            <div class="main-container">
-                <h2>{{ title[1] }}</h2>
-                <h3>環境</h3>
-                <div class="article-container">
-
-                </div>
-                <h3>[概要]</h3>
-                <div class="article-container">
-
-                </div>
-                <h3>ぶつかったエラー</h3>
-                <div class="article-container">
-
-                </div>
-                <h3>やったこと</h3>
-                <div class="article-container">
-                </div>
-            </div>
-        </div> -->
+        </div>
         <article>
             <div>広告1</div>
             <div>広告2</div>
-            <div class="btn-container">
-                <li>{{ title[1] }}</li>
-            </div>
+            <ul class="btn-container" v-for="(value,key) in diary" :key="key">
+                <li>{{ value.title }}</li>
+            </ul>
         </article>
     </main>
 </template>
@@ -61,15 +38,21 @@
     export default{
         data:function(){
             return{
-                title:["Git fatal: Need to specify how to reconcile divergent branches.を解決","aaaa"]
+                diary:[{title:"初めまして",env:"新年あけましておめでとうございます",about:"バックエンド側のエラー",err:"div",act:"こうやって解決いたしました"},{title:"この前はごめんね",env:"新年あけましておめでとうございます",about:"やっぱりわからん",err:"div",act:"こうやって解決いたしました"}]
             }
         }
     }
 </script>
 <style scoped>
+    .btn-container li{
+        background-color: aliceblue;
+        width:80%;
+        padding:2% 4%;
+    }
 
     .article-container{
         min-height: 200px;
+        
     }
     main{
         background-color: gray;
@@ -86,6 +69,7 @@
     }
     article{
         width:20%;
+        position:fixed;
     }
     article div{
         min-height:300px;
@@ -114,6 +98,7 @@
     .main-container{
         background-color: white;
         min-height: 1000px;
+        margin-bottom:20px;
     }
     .wrapper{
         width: 70%;

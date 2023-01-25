@@ -6,14 +6,14 @@
                 <tr>
                     <th>お名前</th>
                     <td> 
-                    <input v-model="name" placeholder="例)田中　太郎" /> 
+                        <input v-model="name" placeholder="例)田中 太郎" /> 
                     <p class="error">{{ errors.name }}</p>
                     </td>
                 </tr>
                 <tr>
                     <th>ふりがな</th>
                     <td> 
-                    <input v-model="kana" placeholder="例)タナカ　タロウ" />
+                    <input v-model="kana" placeholder="例)タナカ タロウ" />
                     <p class="error">{{ errors.kana }}</p>
                     </td>
                 </tr>
@@ -91,9 +91,9 @@ export default {
             }
             return '';
         },
-        checkDescription:function(){
-            if(this.description.length > 400){
-                return  '400文字以内で入力してください';
+        checkDescription: function(){
+            if(this.description > 400){
+                return '400文字以内で入力してください';
             }
         },
         errors: function() {
