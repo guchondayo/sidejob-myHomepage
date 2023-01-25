@@ -69,7 +69,6 @@
     }
     article{
         width:20%;
-        position:fixed;
     }
     article div{
         min-height:300px;
