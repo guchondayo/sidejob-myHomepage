@@ -3,7 +3,25 @@
         <div class="top-header-container">
             <div class="top-header">
                 <h1>{{ corporation }}</h1>
-                <router-link to="/contact" class="btn_04">{{ name[2]}}</router-link>
+                <div class="right-nav">
+                    <router-link to="/contact" class="btn_04">{{ name[2]}}</router-link>
+                    <div class="burger">
+                        <input type="checkbox" id="box-btn" class="drawer_hidden">
+                        <label for="box-btn" class="drawer_open"><span></span></label>
+                        <nav class="nav_content">
+                        <ul class="nav_list">
+                        <h3 class="menu-tille">メニュー</h3>
+                            <li><router-link to="/">{{ name[0]}}</router-link></li>
+                            <li><router-link to="/about">{{ name[1]}}</router-link></li>
+                            <li><router-link to="/activity">{{ name[3]}}</router-link></li>
+                            <li><router-link to="/diary">{{ name[4]}}</router-link></li>
+                            <li><router-link to="/contact">{{ name[2]}}</router-link></li>
+                        </ul>
+                    </nav>
+                    </div>
+                    <!-- メニュー -->
+                    
+                </div>
             </div>
             <nav>
                 <ul class="top-right-nav">
@@ -42,6 +60,64 @@
 </script>
 
 <style scoped>
+    .drawer_hidden{
+        display: none;
+    }
+    .drawer_open {
+        display: flex;
+        height: 60px;
+        width: 60px;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 100;/* 重なり順を一番上にする */
+        cursor: pointer;
+    }
+    .burger span,.burger span::before,.burger span::after{
+        display: block;
+        content: "";
+        width: 25px;
+        height:3px;
+        background-color: gray;
+        position:absolute;
+        transition: 0.5s;
+
+    }
+    .burger span::before{
+       top:8px;
+    }
+    .burger span::after{
+       bottom: 8px;
+    }
+
+    #box-btn:checked ~ .drawer_open span{
+        background: rgba(255, 255, 255, 0);
+    }
+    #box-btn:checked ~ .drawer_open span::before{
+        transform:rotate(45deg);
+        bottom: 0;
+    }
+    #box-btn:checked ~ .drawer_open span::after{
+        transform:rotate(-45deg);
+        top:0;
+    }
+    /* メニューのデザイン*/
+    .nav_content {
+    width: 20%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 100%; /* メニューを画面の外に飛ばす */
+    z-index: 99;
+    background: white;
+    border: 2px double grey;
+    transition: .5s;
+    }
+    /* アイコンがクリックされたらメニューを表示 */
+    #box-btn:checked ~ .nav_content {
+    left:80%;
+    }
+
     header{
         margin: 0;
         padding: 0;
@@ -52,14 +128,13 @@
         padding: 0.5%;
     }
     .top-header{
-        position:relative;
+        display: flex;
+        justify-content: space-between;
+        padding: 1% 2%;
     }
-    .top-header a{
-        position:absolute;
-        top: 0;
-        right:15px;
+    .top-header h1{
+        background-color:yellow;
     }
-
 
     .top-right-nav li{
         padding: 12px;
@@ -77,6 +152,9 @@
     /* ヘッダーのマイルール */
     /* ＊同列で左右→flex */
     /* ＊単純に右にしたいmarginを使った右寄せの法則 */
+    .right-nav{
+        display: flex;
+    }
     ul{
         list-style:none;
     }
@@ -160,6 +238,17 @@
         color: #27acd9;
         background: #fff;
     }
+
+    .menu-tille{
+        width:80%;
+        padding: 3%;
+        text-align: center;
+        border: 2px double grey;
+    }
+    .nav_list li{
+        padding:2%
+    }
+
 
 </style>
 
