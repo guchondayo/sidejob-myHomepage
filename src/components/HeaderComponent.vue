@@ -19,8 +19,6 @@
                         </ul>
                     </nav>
                     </div>
-                    <!-- メニュー -->
-                    
                 </div>
             </div>
             <nav>
@@ -248,6 +246,24 @@
     .nav_list li{
         padding:2%
     }
+
+        /* レスポンシブ */
+    @media screen and ( max-width:800px ){
+        .top-right-nav{
+            display:none;
+        }
+        a.btn_04{
+            display:none;
+        }
+
+        #box-btn:checked ~ .nav_content {
+        left:50%;
+        width: 50%;
+        }
+    }
+
+
+
 
 
 </style>

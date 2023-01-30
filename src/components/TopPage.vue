@@ -67,7 +67,7 @@
     .firstImg{
         background-image: url(../../public/pic1.jpg);
         background-size:cover;
-        width: 100%;
+        max-width: 100%;
         height: 500px;
 
         animation: 1s 0s forwards firstFadein,1s 4s forwards firstFadeout;
@@ -99,7 +99,7 @@
     .secondImg{
         background-image: url(../../public/pic2.jpg);
         background-size:cover;
-        width: 100%;
+        max-width: 100%;
         height: 500px;
 
         animation: 1s 0s forwards secondFadein,1s 4s forwards secondFadeout;
@@ -129,7 +129,7 @@
     .thirdImg{
         background-image: url(../../public/pic3.jpg);
         background-size:cover;
-        width: 100%;
+        max-width: 100%;
         height: 500px;
 
         animation: 1s 0s forwards thirdFadein,1s 4s forwards thirdFadeout;

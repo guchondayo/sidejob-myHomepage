@@ -76,7 +76,7 @@
     .img{
         min-height: 500px;
         background-size: cover;
-        width:100%;
+        max-width:100%;
         margin: 5%;
     }
     .firstPic{
@@ -104,8 +104,8 @@
     }
     .box{
         background-color:yellow;
-        width:300px;
-        height:300px;
+        width: 300px;
+        height: 300px;
     }
     .image-container{
         /* これがないと折り返さないよ */
@@ -120,5 +120,22 @@
         flex:0 0 19%;
         margin-bottom:19px;
         border: 1px solid #dadada;
+    }
+    @media screen and ( max-width:800px ){
+        main{
+        width:100%;
+        min-height: 200px;
+        margin: 0px auto;
+    }
+        .image-container{
+            flex-flow: column;
+        }
+        .box{
+            width:100%;
+        }
+        .img{
+            background-size: contain;
+        }
+
     }
 </style>

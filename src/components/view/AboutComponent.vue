@@ -17,7 +17,6 @@
                     <p>{{ greed }}</p>
                 </div>
             </div>
-
         </div>
         <ul class=side-bar>
             <h4>MENU</h4>
@@ -82,15 +81,9 @@
         left:0px;
     }
     /* https://pisuke-code.com/css-why-not-work-after-and-before/ */
-    ①親要素のpaddingはしておきましょう
-    ②
+    /* ①親要素のpaddingはしておきましょう */
 
-    .container h1{
-        background-color: aqua;
-        opacity: 0.5;
-        padding: 2%;
-        margin :0;
-    }
+
     .picture-article{
         background-image: url(../../../public/aim.jpg);
         background-size: cover;
@@ -100,6 +93,21 @@
     .article p{
         padding: 2% 10%;
     } 
+    /* レスポンシブ */
+    @media screen and ( max-width:800px ){
+        .side-bar{
+            display: none;
+        }
+    }
+    .container h1{
+        padding:10px 20px;
+    }
+    main{
+        width:100%;
+    }
+    .wrapper{
+        width: 100%;
+    }
 
 </style>
 <!-- この、backgroundでWIDTHやSIZEを入れないとかアホ、 -->
@@ -107,3 +115,8 @@
 <!-- FLOATが苦手だったらこうする -->
 <!-- https://developer.mozilla.org/ja/docs/Web/CSS/float -->
 <!-- https://jsfiddle.net/guchon/d1hs2kgv/5/ -->
+<!-- background使い方/フレックスボックスの練習をしっかりやろう -->
+<!-- レスポンシブはそう難しくない -->
+<!-- width/height→アイコンや、文字など、細かいチェック -->
+<!-- %コンテナ/wrapperを中心にできるようにしておく -->
+<!-- htmlの自分ルールを作ってみよう -->
