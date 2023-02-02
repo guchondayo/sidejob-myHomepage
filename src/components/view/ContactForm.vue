@@ -130,12 +130,14 @@ export default {
             }
         },
         send: async function(){
-            const url = 'http://localhost/api/contact/send.php';
+            const url = 'http://localhost:1192/api.php';
+            
             const params = {
                 'name': this.name,
                 'kana': this.kana,
                 'tel': this.tel,
-                'email': this.email
+                'email': this.email,
+                'description': this.description,
             }
             return await axios
                 .post(url, params)
